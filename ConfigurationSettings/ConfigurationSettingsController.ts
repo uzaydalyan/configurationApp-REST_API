@@ -21,6 +21,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
                     "result": "Failed",
                     "parameter": null
                 })
+                next()
             }
 
         })
@@ -39,6 +40,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
                     "parameterList": null,
                     "result": "Failed"
                 })
+                next()
             }
         })
     }
@@ -61,6 +63,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
                 res.status(500).send({
                     "result": "Failed",
                 })
+                next()
             }
         })
     }
@@ -75,6 +78,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
                 res.status(500).send({
                     "result": "Failed",
                 })
+                next()
             }
         })
     }
