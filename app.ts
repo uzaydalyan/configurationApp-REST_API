@@ -1,4 +1,5 @@
 import * as bodyParser from 'body-parser'
+import {NextFunction, Request, Response} from "express";
 var cors = require('cors')
 const router = require('./routes/router')
 const express = require('express');
@@ -10,6 +11,13 @@ const corsOptions = {
     credentials: true
 }
 app.options('*', cors(corsOptions));
+app.all('*', function (req : Request, res : Response, next : NextFunction) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    next()
+});
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', router);
