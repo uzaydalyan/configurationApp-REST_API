@@ -6,18 +6,7 @@ const express = require('express');
 
 const app = express();
 
-const corsOptions = {
-    origin: true,
-    credentials: true
-}
-app.options('*', cors(corsOptions));
-app.all('*', function (req : Request, res : Response, next : NextFunction) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Content-Type,Content-Length, Authorization, Accept,X-Requested-With");
-    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
-    next()
-});
-
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', router);
