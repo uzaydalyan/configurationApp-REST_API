@@ -5,8 +5,11 @@ const express = require('express');
 
 const app = express();
 
-app.use(cors())
-app.options('*', cors());
+const corsOptions = {
+    origin: true,
+    credentials: true
+}
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use('/', router);
