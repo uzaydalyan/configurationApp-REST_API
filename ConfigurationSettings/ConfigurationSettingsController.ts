@@ -7,7 +7,7 @@ import ConfigurationSettingsUtilities from "./ConfigurationSettingsUtilities";
 
 export default class ConfigurationSettingsController implements IConfigurationSettingsController {
 
-    public createParameter(req: Request, res: Response): void {
+    public createParameter(req: Request, res: Response, next: NextFunction): void {
         let parameter = ConfigurationSettingsUtilities.getParameterWithoutIdFromRequest(req.body);
 
         ConfigurationSettingsRepository.addParameter(parameter).then(result => {
@@ -26,7 +26,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
         })
     }
 
-    getAllParameters(req: Request, res: Response): void {
+    getAllParameters(req: Request, res: Response, next: NextFunction): void {
 
         ConfigurationSettingsRepository.getAllParameters().then(parameterList => {
             if(parameterList != null){
@@ -42,7 +42,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
             }
         })
     }
-    updateParameter(req: Request, res: Response): void {
+    updateParameter(req: Request, res: Response, next: NextFunction): void {
 
         let parameter : Parameter = {
             id: req.body.id,
@@ -64,7 +64,7 @@ export default class ConfigurationSettingsController implements IConfigurationSe
             }
         })
     }
-    deleteParameter(req: Request, res: Response): void {
+    deleteParameter(req: Request, res: Response, next: NextFunction): void {
 
         ConfigurationSettingsRepository.deleteParameter(req.body.id).then(result => {
             if(result){
