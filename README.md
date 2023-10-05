@@ -109,8 +109,6 @@ A configuration parameter is represented by the following JSON structure:
 ```json
 {
     “freeUsageLimit”: "5",
-    “supportEmail": "support@codeway.co",
-    "privacyPage": "https://codeway.com/privacy_en.html",
     "minimumVersion": "1.0",
     "latestVersion": “2.1",
     "compressionQuality": "0.7",
