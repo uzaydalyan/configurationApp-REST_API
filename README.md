@@ -26,6 +26,8 @@ To run this project you will need to add the following environment variables to 
 
 `TOKEN_URI`
 
+`AUTH_PROVIDER_CERT_URL`
+
 `CLIENT_CERT_URL`
 
 All of these variables are from Firebase service account config file.
