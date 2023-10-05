@@ -12,11 +12,19 @@ To run this project you will need to add the following environment variables to 
 
 `PRIVATE_KEY_ID`
 
+`PROJECT_ID`
+
 `PRIVATE_KEY`
 
 `CLIENT_EMAIL`
 
 `CLIENT_ID`
+
+`CLIENT_CERT_URL`
+
+`AUTH_URI`
+
+`TOKEN_URI`
 
 `CLIENT_CERT_URL`
 
